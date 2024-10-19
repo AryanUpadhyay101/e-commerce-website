@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Money Saving Tracker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+<style>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0c0b0b;
+    margin: 0;
+    padding: 0;
+}
+
+.savings-container {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin: 10px 0;
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.savings-history {
+    margin-top: 20px;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+}
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="savings-container">
+        <h2>Money Saving Tracker</h2>
+        <p>Enter the amount you've saved:</p>
+        <form id="savings-form">
+            <div class="form-group">
+                <label for="amount">Amount (in your currency):</label>
+                <input type="number" id="amount" name="amount" required>
+            </div>
+            <button type="submit">Save</button>
+        </form>
+        <div class="savings-history">
+            <h3>Savings History</h3>
+            <ul id="savings-list">
+                <!-- Savings items will be added here dynamically -->
+            </ul>
+        </div>
+    </div>
+    <script>
+
+// script.js
+document.addEventListener('DOMContentLoaded', function () {
+    const savingsForm = document.getElementById('savings-form');
+    const savingsList = document.getElementById('savings-list');
+
+    savingsForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const amountInput = document.getElementById('amount');
+        const amount = parseFloat(amountInput.value);
+
+        if (!isNaN(amount)) {
+            addSavingsItem(amount);
+            amountInput.value = '';
+        }
+    });
+
+    function addSavingsItem(amount) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `Saved: $${amount.toFixed(2)}`;
+        savingsList.appendChild(listItem);
+    }
+});
+
+
+
+    </script>
+</body>
+</html>

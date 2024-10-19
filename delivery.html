@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delivery Information</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+
+
+
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #080000;
+    margin: 0;
+    padding: 0;
+}
+
+.delivery-container {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border-color: black;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+</style>
+
+
+
+
+</head>
+<body>
+    <div class="delivery-container">
+        <h2>Delivery Information</h2>
+        <form id="delivery-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <button type="submit">Submit Delivery Information</button>
+        </form>
+    </div>
+</body>
+</html>
